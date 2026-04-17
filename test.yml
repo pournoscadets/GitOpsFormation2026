@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-reconcile
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+  namespace: test-reconcile
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+    ports:
+    - containerPort: 80
