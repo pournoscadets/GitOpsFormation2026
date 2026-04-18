@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: team-best-git-repo
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  provider: github
+  secretRef:
+    name: flux-system
+  ref:
+    branch: main
+  url: https://github.com/pournoscadets/TeamBest.git
