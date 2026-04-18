@@ -1,0 +1,12 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: formation-git-repo
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  secretRef:
+    name: flux-system
+  ref:
+    branch: main
+  url: https://github.com/pournoscadets/TeamFormationK8s.git

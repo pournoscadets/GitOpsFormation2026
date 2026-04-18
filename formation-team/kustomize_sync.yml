@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: our-team-kustomize
+  namespace: flux-system
+spec:
+  targetNamespace: formation-team
+  interval: 1m0s
+  timeout: 50s
+  path: .
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: formation-git-repo
